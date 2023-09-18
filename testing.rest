@@ -1,0 +1,143 @@
+
+# USERS
+### Test Register
+POST  http://localhost:3000/api/users
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "renaldin",
+  "password": "rahasia",
+  "name": "Renaldi Noviandi"
+}
+
+### Test Login
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "renaldin",
+  "password": "rahasia"
+}
+
+### Test Current Get User
+GET http://localhost:3000/api/users/current
+Content-Type: application/json
+Accept: application/json
+Authorization: 61d3b77b-a264-4b5b-9b51-0a40a4de0dbe
+
+### Test Update Current User
+PATCH http://localhost:3000/api/users/current
+Content-Type: application/json
+Accept: application/json
+Authorization: 61d3b77b-a264-4b5b-9b51-0a40a4de0dbe
+
+{
+  "name": "Renaldi Test"
+}
+
+### Test Logout Current User
+DELETE http://localhost:3000/api/users/logout
+Content-Type: application/json
+Accept: application/json
+Authorization: 61d3b77b-a264-4b5b-9b51-0a40a4de0dbe
+
+
+# CONTACT
+### Test Create Contact
+POST http://localhost:3000/api/contacts
+Content-Type: application/json
+Accept: application/json
+Authorization: 61d3b77b-a264-4b5b-9b51-0a40a4de0dbe
+
+{
+  "firstName": "Renaldi 2",
+  "lastName": "Noviandi 2",
+  "email": "renaldi2@gmail.com",
+  "phone": "089699283983"
+}
+
+### Test Search Contact all
+GET http://localhost:3000/api/contacts
+Content-Type: application/json
+Accept: application/json
+Authorization: 61d3b77b-a264-4b5b-9b51-0a40a4de0dbe
+
+### Test Search Contact
+GET http://localhost:3000/api/contacts?size=1&page=2
+Content-Type: application/json
+Accept: application/json
+Authorization: 61d3b77b-a264-4b5b-9b51-0a40a4de0dbe
+
+### Test detail Contact
+GET http://localhost:3000/api/contacts/1600
+Content-Type: application/json
+Accept: application/json
+Authorization: 61d3b77b-a264-4b5b-9b51-0a40a4de0dbe
+
+### Test Update Contact
+PUT http://localhost:3000/api/contacts/1600
+Content-Type: application/json
+Accept: application/json
+Authorization: 61d3b77b-a264-4b5b-9b51-0a40a4de0dbe
+
+{
+  "firstName": "Renaldi 2 Update",
+  "lastName": "Noviandi 2 Update",
+  "email": "renaldi2update@gmail.com",
+  "phone": "089699283983"
+}
+
+### Test delete Contact
+DELETE  http://localhost:3000/api/contacts/1600
+Content-Type: application/json
+Accept: application/json
+Authorization: 61d3b77b-a264-4b5b-9b51-0a40a4de0dbe
+
+# ADDRESS
+### Test Create Address
+POST http://localhost:3000/api/contacts/1599/addresses
+Content-Type: application/json
+Accept: application/json
+Authorization: 61d3b77b-a264-4b5b-9b51-0a40a4de0dbe
+
+{
+   "street": "Jalan Test 3",
+    "city": "Kota Sumedang",
+    "province": "Jawa Barat",
+    "country": "Indonesia",
+    "postalCode": "7890"
+}
+
+### Test Get Address all by contact
+GET http://localhost:3000/api/contacts/1599/addresses
+Content-Type: application/json
+Accept: application/json
+Authorization: 61d3b77b-a264-4b5b-9b51-0a40a4de0dbe
+
+### Test Get Address one by contact
+GET http://localhost:3000/api/contacts/1599/addresses/253
+Content-Type: application/json
+Accept: application/json
+Authorization: 61d3b77b-a264-4b5b-9b51-0a40a4de0dbe
+
+### Test Update Address
+PUT http://localhost:3000/api/contacts/1599/addresses/253
+Content-Type: application/json
+Accept: application/json
+Authorization: 61d3b77b-a264-4b5b-9b51-0a40a4de0dbe
+
+{
+  "street": "Jalan Test 2 Update",
+  "city": "Kota Sumedang Update",
+  "province": "Jawa Barat Update",
+  "country": "Indonesia Update",
+  "postalCode": "78901"
+}
+
+### Test Delete Address
+DELETE http://localhost:3000/api/contacts/1599/addresses/253
+Content-Type: application/json
+Accept: application/json
+Authorization: 61d3b77b-a264-4b5b-9b51-0a40a4de0dbe
